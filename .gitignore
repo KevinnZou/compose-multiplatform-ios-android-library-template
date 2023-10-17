@@ -7,6 +7,6 @@ build/
 /captures
 .externalNativeBuild
 .cxx
-iosApp/iosApp.xcworkspace/*
-iosApp/iosApp.xcodeproj/*
-!iosApp/iosApp.xcodeproj/project.pbxproj
+sample/iosApp/iosApp.xcworkspace/*
+sample/iosApp/iosApp.xcodeproj/*
+!sample/iosApp/iosApp.xcodeproj/project.pbxproj
