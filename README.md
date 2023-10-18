@@ -10,6 +10,8 @@ and contains the following changes:
 * Set up a GitHub Action to publish the documentation to GitHub Pages.
 * Apply the `com.vanniktech.maven.publish` plugin to streamline the process of publishing a library.
 
+**Note**: If you also want to make your library support Desktop target, please use this template https://github.com/KevinnZou/compose-multiplatform-library-template
+
 ## Maven Publish
 This template applies the `com.vanniktech.maven.publish` plugin to streamline the process of publishing a library.
 
