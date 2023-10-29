@@ -6,7 +6,8 @@ plugins {
     id("com.android.library").apply(false)
     id("org.jetbrains.compose").apply(false)
     id("org.jetbrains.dokka")
-    id("com.vanniktech.maven.publish") version "0.25.3" apply false
+    id("com.vanniktech.maven.publish")
+    id("org.jlleitschuh.gradle.ktlint")
 }
 
 /**
@@ -17,5 +18,12 @@ subprojects {
         resolutionStrategy {
             force("org.jetbrains.kotlinx:atomicfu:0.21.0")
         }
+    }
+
+    apply(plugin = "org.jlleitschuh.gradle.ktlint") // Version should be inherited from parent
+
+    // Optionally configure plugin
+    configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
+        version.set("1.0.1")
     }
 }
