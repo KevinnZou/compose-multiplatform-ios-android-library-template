@@ -9,6 +9,7 @@ and contains the following changes:
 * Apply the `org.jetbrains.dokka` plugin to generate documentation for the library code.
 * Set up a GitHub Action to publish the documentation to GitHub Pages.
 * Apply the `com.vanniktech.maven.publish` plugin to streamline the process of publishing a library.
+* Apply the `org.jlleitschuh.gradle.ktlint` plugin to enforce the code style and set up the git hooks to fix the code style before committing automatically.
 
 **Note**: If you also want to make your library support Desktop target, please use this template https://github.com/KevinnZou/compose-multiplatform-library-template
 
