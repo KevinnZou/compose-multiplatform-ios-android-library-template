@@ -7,9 +7,9 @@ and contains the following changes:
 * Add a `lib` module for the shared library code.
 * Move the androidApp and iosApp modules to the `samples` folder.
 * Apply the `org.jetbrains.dokka` plugin to generate documentation for the library code.
-* Set up a GitHub Action to publish the documentation to GitHub Pages.
 * Apply the `com.vanniktech.maven.publish` plugin to streamline the process of publishing a library.
 * Apply the `org.jlleitschuh.gradle.ktlint` plugin to enforce the code style and set up the git hooks to fix the code style before committing automatically.
+* Set up the CI pipeline to build the project, check the code style, and publish the documentation.
 
 **Note**: If you also want to make your library support Desktop target, please use this template https://github.com/KevinnZou/compose-multiplatform-library-template
 
@@ -85,6 +85,33 @@ To install the git hooks, run the following command:
 ./gradlew setUpGitHooks
 ```
 Then you can commit the code without worrying about the code style.
+
+## CI/CD
+This template uses GitHub Actions to set up a CI/CD pipeline.
+Currently, the pipeline is configured to do three things:
+
+### Build the project
+The pipeline is triggered on every push to the `main` branch or on every pull request.
+It builds the project and runs the tests.
+
+The pipeline is defined in [`.github/workflows/build.yml`](https://github.com/KevinnZou/compose-multiplatform-library-template/blob/feature/ci_support/.github/workflows/build.yml).
+
+### Check the code style
+The pipeline is triggered on every push to the `main` branch or on every pull request.
+It checks the code style and fails if the code style is not correct.
+
+The pipeline is defined in [`.github/workflows/code_style.yml`](https://github.com/KevinnZou/compose-multiplatform-library-template/blob/feature/ci_support/.github/workflows/code_style.yml).
+
+If the code style is not correct, you can run the following command to fix it:
+```shell
+./gradlew ktlintFormat
+```
+
+### Publish the documentation
+The pipeline is triggered on every push to the `main` branch or on every pull request.
+It generates the documentation and publishes it to GitHub Pages.
+
+The pipeline is defined in [`.github/workflows/wiki.yml`](https://github.com/KevinnZou/compose-multiplatform-library-template/blob/feature/ci_support/.github/workflows/wiki.yml).
 
 ## Dokka
 
